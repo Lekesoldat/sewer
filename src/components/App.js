@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ComboBox from './ComboBox';
 import Grid from './Grid';
+import Graph from './Graph';
 
 const Container = styled.section`
   width: 800px;
@@ -32,6 +33,7 @@ export default () => {
       </Description>
       <ComboBox />
       <Grid />
+      <Graph />
     </Container>
   );
 };

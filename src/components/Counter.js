@@ -19,15 +19,11 @@ const Counter = styled.div`
   }
 `;
 
-const handleTextClick = () => {
-  // Kode som endrer fargen på teksten
-};
-
 export default ({ value, text }) => {
   return (
     <Counter>
       <button>{value}</button>
-      <p onClick={handleTextClick}>{text}</p>
+      <p>{text}</p>
     </Counter>
   );
 };
