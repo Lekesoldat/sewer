@@ -1,2 +1,2 @@
-# The Nagulator
-The Nagulator. Track the nag.
+# Sewer 🤢
+A tool for tracking nagging, sewing, whining and expression of dissatisfaction.
