@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import ComboBox from './ComboBox';
-import Grid from './Grid';
+import { ComboBox } from './ComboBox';
+import { Grid } from './Grid';
 import Graph from './Graph';
 import createPersistedState from 'use-persisted-state';
 
@@ -32,12 +32,12 @@ const useUserStore = () => {
     const user = {
       name,
       records: {
-        Nagging: 0,
-        'Expression of Dissatisfaction': 0,
-        Sarcasm: 0,
-        'Making themselves a victim': 0,
-        Yelling: 0,
-        Whining: 0
+        Nagging: [],
+        'Expression of Dissatisfaction': [],
+        Sarcasm: [],
+        'Making themselves a victim': [],
+        Yelling: [],
+        Whining: []
       }
     };
 
@@ -63,7 +63,7 @@ const useUserStore = () => {
   };
 };
 
-export default () => {
+export const App = () => {
   /**
    * Du har state som er delt mellom alle komponentene dine. ComboBox er avhengig av alle brukere, men det er også
    * Grid og Graph. ComboBox trenger to props: values og onSelect.
@@ -75,7 +75,7 @@ export default () => {
     document.title = user
       ? 'Sewer: ' + user.name
       : 'Sewer: Track dissatisfaction';
-  });
+  }, [index]);
 
   return (
     <Container>
