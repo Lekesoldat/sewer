@@ -19,6 +19,7 @@ export default ({ users, index, onSelectUser, onAddUser }) => {
         break;
       default:
         onSelectUser(value);
+        setSelected(value);
         break;
     }
   };
@@ -29,7 +30,9 @@ export default ({ users, index, onSelectUser, onAddUser }) => {
         Select one..
       </option>
       {users.map((user, index) => (
-        <option value={index}>{user.name}</option>
+        <option key={index} value={index}>
+          {user.name}
+        </option>
       ))}
       <option value='new'>New entry..</option>
     </Select>

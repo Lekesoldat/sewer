@@ -24,6 +24,7 @@ export default ({ user, onUpdateUser }) => {
     <Grid>
       {Object.entries(user.records).map(([key, value]) => (
         <Counter
+          key={key}
           text={key}
           count={value}
           onClick={() => updateUserRecord(key, value + 1)}

@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import ComboBox from './ComboBox';
 import Grid from './Grid';
@@ -32,7 +32,12 @@ const useUserStore = () => {
     const user = {
       name,
       records: {
-        nagging: 0
+        nagging: 0,
+        dissatisfaction: 0,
+        sarcasm: 0,
+        victim: 0,
+        yelling: 0,
+        whining: 0
       }
     };
 
@@ -42,11 +47,7 @@ const useUserStore = () => {
 
   const updateUser = user => {
     // Lager en ny state hvor den endrede brukeren er oppdatert
-    setUsers([
-      ...users.slice(null, index),
-      user,
-      ...users.slice(index + 1, null)
-    ]);
+    setUsers([...users.slice(0, index), user, ...users.slice(index + 1)]);
   };
 
   const selectUser = index => {
