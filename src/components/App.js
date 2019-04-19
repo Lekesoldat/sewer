@@ -72,7 +72,9 @@ export default () => {
   const user = users[index];
 
   useEffect(() => {
-    document.title = 'Sewer: ' + user.name;
+    document.title = user
+      ? 'Sewer: ' + user.name
+      : 'Sewer: Track dissatisfaction';
   });
 
   return (
