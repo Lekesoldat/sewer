@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import Counter from './Counter';
+import { Counter } from './Counter';
 
-const Grid = styled.div`
+const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-flow: row;
   gap: 2rem;
 `;
 
-export default ({ user, onUpdateUser }) => {
+export const Grid = ({ user, onUpdateUser }) => {
   const updateUserRecord = (key, value) => {
     onUpdateUser({
       ...user,
@@ -21,15 +21,15 @@ export default ({ user, onUpdateUser }) => {
   };
 
   return (
-    <Grid>
+    <Container>
       {Object.entries(user.records).map(([key, value]) => (
         <Counter
           key={key}
           text={key}
-          count={value}
-          onClick={() => updateUserRecord(key, value + 1)}
+          count={value.length}
+          onClick={() => updateUserRecord(key, [...value, new Date()])}
         />
       ))}
-    </Grid>
+    </Container>
   );
 };

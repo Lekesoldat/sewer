@@ -7,7 +7,7 @@ const Select = styled.select`
   margin-bottom: 2em;
 `;
 
-export default ({ users, index, onSelectUser, onAddUser }) => {
+export const ComboBox = ({ users, index, onSelectUser, onAddUser }) => {
   const [selected, setSelected] = useState(index !== null ? index : 'select');
 
   const handleChange = ({ target: { value } }) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Counter = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,9 +19,9 @@ const Counter = styled.div`
   }
 `;
 
-export default ({ selected, count, onClick, text }) => {
+export const Counter = ({ selected, count, onClick, text }) => {
   return (
-    <Counter>
+    <Container>
       <button
         style={{ border: selected ? '1px solid blue' : 'none' }}
         onClick={onClick}
@@ -29,6 +29,6 @@ export default ({ selected, count, onClick, text }) => {
         {count}
       </button>
       <p>{text}</p>
-    </Counter>
+    </Container>
   );
 };
