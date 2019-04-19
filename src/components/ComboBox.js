@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Select = styled.select`
   display: block;
   margin: auto;
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
 `;
 
 export const ComboBox = ({ users, index, onSelectUser, onAddUser }) => {
