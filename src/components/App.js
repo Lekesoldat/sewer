@@ -32,12 +32,12 @@ const useUserStore = () => {
     const user = {
       name,
       records: {
-        nagging: 0,
-        dissatisfaction: 0,
-        sarcasm: 0,
-        victim: 0,
-        yelling: 0,
-        whining: 0
+        Nagging: 0,
+        'Expression of Dissatisfaction': 0,
+        Sarcasm: 0,
+        'Making themselves a victim': 0,
+        Yelling: 0,
+        Whining: 0
       }
     };
 
