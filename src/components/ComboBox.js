@@ -1,20 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const ComboBox = styled.select`
+const Select = styled.select`
   display: block;
   margin: auto;
   margin-bottom: 2em;
 `;
 
-export default () => {
+export default ({ users, index, onSelectUser, onAddUser }) => {
+  const [selected, setSelected] = useState(index !== null ? index : 'select');
+
+  const handleChange = ({ target: { value } }) => {
+    switch (value) {
+      case 'select':
+        return;
+      case 'new':
+        onAddUser(prompt("Who's bothering you?"));
+        break;
+      default:
+        onSelectUser(value);
+        break;
+    }
+  };
+
   return (
-    <ComboBox required>
-      <option value='' disabled selected>
+    <Select required value={selected} onChange={handleChange}>
+      <option value='select' disabled>
         Select one..
       </option>
-      <option>Magnus</option>
+      {users.map((user, index) => (
+        <option value={index}>{user.name}</option>
+      ))}
       <option value='new'>New entry..</option>
-    </ComboBox>
+    </Select>
   );
 };

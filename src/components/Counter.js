@@ -19,10 +19,15 @@ const Counter = styled.div`
   }
 `;
 
-export default ({ value, text }) => {
+export default ({ selected, count, onClick, text }) => {
   return (
     <Counter>
-      <button>{value}</button>
+      <button
+        style={{ border: selected ? '1px solid blue' : 'none' }}
+        onClick={onClick}
+      >
+        {count}
+      </button>
       <p>{text}</p>
     </Counter>
   );

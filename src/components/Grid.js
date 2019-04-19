@@ -9,15 +9,26 @@ const Grid = styled.div`
   gap: 2rem;
 `;
 
-export default () => {
+export default ({ user, onUpdateUser }) => {
+  const updateUserRecord = (key, value) => {
+    onUpdateUser({
+      ...user,
+      records: {
+        ...user.records,
+        [key]: value
+      }
+    });
+  };
+
   return (
     <Grid>
-      <Counter text='Nagging' value={3} />
-      <Counter text='Expression of Dissatisfaction' value={8} />
-      <Counter text='Sarcasm' value={4} />
-      <Counter text='Make themselves a victim' value={5} />
-      <Counter text='Yelling' value={1} />
-      <Counter text='Whining' value={12} />
+      {Object.entries(user.records).map(([key, value]) => (
+        <Counter
+          text={key}
+          count={value}
+          onClick={() => updateUserRecord(key, value + 1)}
+        />
+      ))}
     </Grid>
   );
 };
