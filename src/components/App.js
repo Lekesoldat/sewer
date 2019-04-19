@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ComboBox from './ComboBox';
 import Grid from './Grid';
@@ -70,6 +70,10 @@ export default () => {
    */
   const { users, index, addUser, updateUser, selectUser } = useUserStore();
   const user = users[index];
+
+  useEffect(() => {
+    document.title = 'Sewer: ' + user.name;
+  });
 
   return (
     <Container>
