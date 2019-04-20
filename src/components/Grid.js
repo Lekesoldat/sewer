@@ -1,6 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Counter } from './Counter';
+import React from "react";
+import styled from "styled-components";
+import moment from "moment";
+import { Counter } from "./Counter";
 
 const Container = styled.div`
   display: grid;
@@ -27,9 +28,7 @@ export const Grid = ({ user, onUpdateUser }) => {
           key={key}
           text={key}
           count={value.length}
-          onClick={() =>
-            updateUserRecord(key, [...value, new Date().toLocaleDateString()])
-          }
+          onClick={() => updateUserRecord(key, [...value, moment()])}
         />
       ))}
     </Container>

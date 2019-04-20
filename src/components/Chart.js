@@ -1,9 +1,9 @@
-import React from 'react';
-import { LineChart, Line } from 'recharts';
-import styled from 'styled-components';
-import moment from 'moment';
+import React from "react";
+import { LineChart, Line } from "recharts";
+import styled from "styled-components";
+import moment from "moment";
 
-const FORMAT = 'YYYY-MM-DD';
+const FORMAT = "YYYY-MM-DD";
 
 const transform = entries =>
   entries.reduce((result, entry) => {
@@ -38,13 +38,11 @@ export const Chart = ({ user: { records } }) => {
   const data = [];
 
   for (let i = 0; i < 30; i++) {
-    now.subtract(i, 'days');
+    now.subtract(i, "days");
     const date = now.format(FORMAT);
     const result = { date };
 
     for (const [key, value] of entries) {
-      console.log(date, value);
-
       if (date in value) {
         result[key] = value[date];
       } else {
@@ -92,7 +90,7 @@ const SimpleLineChart = React.createClass({
   return (
     <Container>
       <LineChart width={400} height={400} data={data}>
-        <Line type='monotone' dataKey='uv' stroke='#8884d8' />
+        <Line type="monotone" dataKey="uv" stroke="#8884d8" />
       </LineChart>
     </Container>
   );
