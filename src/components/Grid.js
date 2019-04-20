@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import moment from "moment";
-import { Counter } from "./Counter";
+import React from 'react';
+import styled from 'styled-components';
+import moment from 'moment';
+import { Counter } from './Counter';
 
 const Container = styled.div`
   display: grid;
