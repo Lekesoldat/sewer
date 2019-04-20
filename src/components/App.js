@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { ComboBox } from './ComboBox';
 import { Grid } from './Grid';
 import Graph from './Graph';
+import { Chart } from './Chart';
 import createPersistedState from 'use-persisted-state';
 
 const Container = styled.section`
@@ -29,6 +30,7 @@ const useUserStore = () => {
   const [index, setIndex] = useIndex(null);
 
   const addUser = name => {
+    // const initialDate = new Date().toLocaleDateString();
     const user = {
       name,
       records: {
@@ -39,6 +41,17 @@ const useUserStore = () => {
         Yelling: [],
         Whining: []
       }
+
+      // nags: {
+      //   [initialDate]: [
+      //     'Nagging',
+      //     'Expression of Dissatisfaction',
+      //     'Sarcasm',
+      //     'Making themselves a victim',
+      //     'Yelling',
+      //     'Whining'
+      //   ]
+      // }
     };
 
     setUsers([...users, user]);
@@ -73,7 +86,7 @@ export const App = () => {
 
   useEffect(() => {
     document.title = user
-      ? 'Sewer: ' + user.name
+      ? `Sewer: ${user.name}`
       : 'Sewer: Track dissatisfaction';
   }, [index]);
 
@@ -96,7 +109,7 @@ export const App = () => {
       {user ? (
         <>
           <Grid user={user} onUpdateUser={updateUser} />
-          <Graph user={user} />
+          <Chart user={user} />
         </>
       ) : null}
     </Container>

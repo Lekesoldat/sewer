@@ -27,7 +27,9 @@ export const Grid = ({ user, onUpdateUser }) => {
           key={key}
           text={key}
           count={value.length}
-          onClick={() => updateUserRecord(key, [...value, new Date()])}
+          onClick={() =>
+            updateUserRecord(key, [...value, new Date().toLocaleDateString()])
+          }
         />
       ))}
     </Container>
