@@ -12,6 +12,16 @@ import styled from 'styled-components';
 import moment from 'moment';
 
 const FORMAT = 'YYYY-MM-DD';
+const COLORS = [
+  '#365577',
+  '#c78aaa',
+  '#7eaed3',
+  '#a9a9a9',
+  '#fcc3a3',
+  '#270f36',
+  '#F2BF2F',
+  '#DB4210'
+];
 
 const transform = entries =>
   entries.reduce((result, entry) => {
@@ -54,17 +64,6 @@ export const Chart = ({ user: { records } }) => {
 
     data.push(result);
   }
-
-  const COLORS = [
-    '#365577',
-    '#c78aaa',
-    '#7eaed3',
-    '#a9a9a9',
-    '#fcc3a3',
-    '#270f36',
-    '#F2BF2F',
-    '#DB4210'
-  ];
 
   const colorsLeft = COLORS.slice();
   const colors = {};
