@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { ComboBox } from './ComboBox';
 import { Grid } from './Grid';
-import Graph from './Graph';
 import { Chart } from './Chart';
 import createPersistedState from 'use-persisted-state';
 
@@ -30,7 +29,6 @@ const useUserStore = () => {
   const [index, setIndex] = useIndex(null);
 
   const addUser = name => {
-    // const initialDate = new Date().toLocaleDateString();
     const user = {
       name,
       records: {
