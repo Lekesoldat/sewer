@@ -15,7 +15,10 @@ export const ComboBox = ({ users, index, onSelectUser, onAddUser }) => {
       case 'select':
         return;
       case 'new':
-        onAddUser(prompt("Who's bothering you?"));
+        const name = prompt("Who's bothering you?");
+        if (name) {
+          onAddUser(name);
+        }
         break;
       default:
         onSelectUser(value);
