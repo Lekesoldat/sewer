@@ -39,17 +39,6 @@ const useUserStore = () => {
         Yelling: [],
         'Trying to get the last word in a discussion': []
       }
-
-      // nags: {
-      //   [initialDate]: [
-      //     'Nagging',
-      //     'Expression of Dissatisfaction',
-      //     'Sarcasm',
-      //     'Making themselves a victim',
-      //     'Yelling',
-      //     'Whining'
-      //   ]
-      // }
     };
 
     setUsers([...users, user]);
