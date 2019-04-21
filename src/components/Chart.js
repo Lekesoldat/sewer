@@ -62,14 +62,12 @@ export const Chart = ({ user: { records } }) => {
     '#a9a9a9',
     '#fcc3a3',
     '#270f36',
-    '#3B9BE',
     '#F2BF2F',
     '#DB4210'
   ];
 
   const colorsLeft = COLORS.slice();
   const colors = {};
-
   for (const key of Object.keys(records)) {
     const index = Math.floor(Math.random() * colorsLeft.length);
     colors[key] = colorsLeft.splice(index, 1)[0];
