@@ -32,12 +32,12 @@ const useUserStore = () => {
     const user = {
       name,
       records: {
-        Nagging: [],
+        'Complaining about pain': [],
         'Expression of Dissatisfaction': [],
         Sarcasm: [],
         'Making themselves a victim': [],
         Yelling: [],
-        Whining: []
+        'Trying to get the last word in a discussion': []
       }
 
       // nags: {
