@@ -20,6 +20,10 @@ export const ComboBox = ({ users, index, onSelectUser, onAddUser }) => {
           onAddUser(name);
         }
         break;
+      case 'clear':
+        localStorage.clear();
+        document.location.reload();
+        break;
       default:
         onSelectUser(value);
         setSelected(value);
@@ -37,6 +41,7 @@ export const ComboBox = ({ users, index, onSelectUser, onAddUser }) => {
           {user.name}
         </option>
       ))}
+      <option value='clear'>Clear all data.</option>
       <option value='new'>New entry..</option>
     </Select>
   );
