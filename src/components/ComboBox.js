@@ -14,16 +14,19 @@ export const ComboBox = ({ users, index, onSelectUser, onAddUser }) => {
     switch (value) {
       case 'select':
         return;
+
       case 'new':
         const name = prompt("Who's bothering you?");
         if (name) {
           onAddUser(name);
         }
         break;
+
       case 'clear':
         localStorage.clear();
         document.location.reload();
         break;
+
       default:
         onSelectUser(value);
         setSelected(value);
