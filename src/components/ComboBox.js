@@ -23,10 +23,12 @@ export const ComboBox = ({ users, index, onSelectUser, onAddUser }) => {
         break;
 
       case 'clear':
-        localStorage.clear();
-        document.location.reload();
-        break;
-
+        if (window.confirm("Are you sure you'd like to erase all data?")) {
+          localStorage.clear();
+          document.location.reload();
+          break;
+        }
+        return;
       default:
         onSelectUser(value);
         setSelected(value);
