@@ -33,11 +33,11 @@ const useUserStore = () => {
       name,
       records: {
         'Complaining about pain': [],
-        'Expression of Dissatisfaction': [],
-        Sarcasm: [],
+        'Complaining about workload': [],
+        'Complaining about chores': [],
+        'Trying to get the last word in a discussion': [],
         'Making themselves a victim': [],
-        Yelling: [],
-        'Trying to get the last word in a discussion': []
+        'Genereal Expression of Dissatisfaction': []
       }
     };
 
