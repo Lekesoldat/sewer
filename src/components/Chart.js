@@ -49,7 +49,7 @@ export const Chart = ({ user: { records } }) => {
   const now = moment();
   const data = [];
 
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 14; i++) {
     now.subtract(i, 'days');
     const date = now.format(FORMAT);
     const result = { date };
